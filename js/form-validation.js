@@ -1,41 +1,27 @@
 $("#formValidate").validate({
         rules: {
-            uname: {
+            nome: {
                 required: true,
                 minlength: 5
             },
-            cemail: {
+            email: {
                 required: true,
                 email:true
             },
-            password: {
-				required: true,
-				minlength: 5
+            empresa: {
+				required: true
 			},
-			cpassword: {
-				required: true,
-				minlength: 5,
-				equalTo: "#password"
+			telefone: {
+				required: true
 			},
-			curl: {
-                required: true,
-                url:true
-            },
-            crole:"required",
-            ccomment: {
-				required: true,
-				minlength: 15
-            },
-            cgender:"required",
-			cagree:"required",
+      modal:"required"
         },
         //For custom messages
         messages: {
-            uname:{
+            nome:{
                 required: "Enter a username",
                 minlength: "Enter at least 5 characters"
-            },
-            curl: "Enter your website",
+            }
         },
         errorElement : 'div',
         errorPlacement: function(error, element) {
@@ -45,5 +31,15 @@ $("#formValidate").validate({
           } else {
             error.insertAfter(element);
           }
-        }
+        },
+        submitHandler: function(form) {
+          $.ajax({
+              url: form.action,
+              type: form.method,
+              data: $(form).serialize(),
+              success: function(response) {
+                  $('#answers').html(response);
+              }            
+          });
+      }
      });

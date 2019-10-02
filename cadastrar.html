@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-
+    <link type="text/css" rel="stylesheet" href="css/listar.css"  media="screen,projection"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -25,30 +25,34 @@
 
     <main>
         <div class="container col s12">
-            <form action="http://localhost:8080/transportadoras/" method="POST"></form>
+            <form action="http://localhost:8080/transportadoras/" method="POST" id="formValidate">
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
+                    <input name= "email" id="email" type="email" data-error=".errorTxt1">
                     <label for="email">Email</label>
+                    <div class="errorTxt1"></div>
                 </div>
                 <div class="input-field col s12">
-                    <input id="nome" type="text" class="validate">
+                    <input id="nome" type="text" data-error=".errorTxt2">
                     <label for="nome">Nome</label>
+                    <div class="errorTxt2"></div>
                 </div>
-                <div class="input-field col s12">
-                    <input id="empresa" type="text" class="validate">
+                <div class="input-field col s12" data-error=".errorTxt3">
+                    <input id="empresa" type="text" >
                     <label for="empresa">Empresa</label>
+                    <div class="errorTxt3"></div>
                 </div>
-                <div class="input-field col s12">
-                    <input id="telefone" type="text" class="validate" maxlength="15">
+                <div class="input-field col s12" data-error=".errorTxt4">
+                    <input id="telefone" type="text"  maxlength="15">
                     <label for="telefone">Telefone</label>
+                    <div class="errorTxt4"></div>
                 </div>
                 <div class="input-field col s12">
-                    <input id="celular" type="text" class="validate" maxlength="16">
+                    <input id="celular" type="text"  maxlength="16">
                     <label for="celular">Celular</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="whatsapp" type="text" class="validate" maxlength="16">
+                    <input id="whatsapp" type="text"  maxlength="16">
                     <label for="whatsapp">Whatsapp</label>
                 </div>
                 <div class="input-field col s12">
@@ -60,28 +64,35 @@
                     <label for="modal">Modal</label>
                 </div>
                 <div class="input-field col s8">
-                    <input id="cep" type="text" class="validate" maxlength="9">
+                    <input id="cep" type="text"  maxlength="9">
                     <label for="cep">Cep</label>
                 </div>
-                <div class="input-field col s4">
+                <div class="input-field col s4" data-error=".errorTxt6">
                         <select id="estado"></select>
                         <label for="estado">Estado</label>
+                        <div class="errorTxt6"></div>
                 </div>
-                <div class="input-field col s12">
-                        <input id="cidade" type="text" class="validate">
+                <div class="input-field col s12" data-error=".errorTxt7">
+                        <input id="cidade" type="text" >
                         <label for="cidade">Cidade</label>
+                        <div class="errorTxt7"></div>
                 </div>
-                <div class="input-field col s12">
-                        <input id="bairro" type="text" class="validate">
+                <div class="input-field col s12" data-error=".errorTxt8">
+                        <input id="bairro" type="text" >
                         <label for="bairro">Bairro</label>
+                        <div class="errorTxt8"></div>
                 </div>
-                <div class="input-field col s12">
-                        <input id="rua" type="text" class="validate">
+                <div class="input-field col s12" data-error=".errorTxt9">
+                        <input id="rua" type="text" >
                         <label for="rua">Rua / Avenida</label>
+                        <div class="errorTxt9"></div>
                 </div>
                 <div class="input-field col s12">
-                        <input id="numero" type="text" class="validate">
+                        <input id="numero" type="text" >
                         <label for="numero">Numero</label>
+                </div>
+                <div class="col s12">
+                    <button id ="botao-submit" type= "submit" name="action" class="green darken-2 btn">Cadastrar-se agora!</a>
                 </div>
             </form>
 
