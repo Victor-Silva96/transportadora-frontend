@@ -1,0 +1,15 @@
+#botao-cadastro{
+    margin-top:6%;
+}
+
+.btn{
+    text-transform: unset;
+}
+
+.cards-transportadora{
+    border: 1px solid black;
+}
+
+.cards-transportadora p{
+    color: black;
+}

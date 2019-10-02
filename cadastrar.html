@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <div class="col s6 m6">
+                <h2>Cadastrar</h2>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="divider"></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container col s12">
+            <form action="http://localhost:8080/transportadoras/" method="POST"></form>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="nome" type="text" class="validate">
+                    <label for="nome">Nome</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="empresa" type="text" class="validate">
+                    <label for="empresa">Empresa</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="telefone" type="text" class="validate" maxlength="15">
+                    <label for="telefone">Telefone</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="celular" type="text" class="validate" maxlength="16">
+                    <label for="celular">Celular</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="whatsapp" type="text" class="validate" maxlength="16">
+                    <label for="whatsapp">Whatsapp</label>
+                </div>
+                <div class="input-field col s12">
+                    <select id="modal">
+                        <option value="1" selected>Rodoviário</option>
+                        <option value="2">Aquaviário</option>
+                        <option value="3">Aéreo</option>
+                    </select>
+                    <label for="modal">Modal</label>
+                </div>
+                <div class="input-field col s8">
+                    <input id="cep" type="text" class="validate" maxlength="9">
+                    <label for="cep">Cep</label>
+                </div>
+                <div class="input-field col s4">
+                        <select id="estado"></select>
+                        <label for="estado">Estado</label>
+                </div>
+                <div class="input-field col s12">
+                        <input id="cidade" type="text" class="validate">
+                        <label for="cidade">Cidade</label>
+                </div>
+                <div class="input-field col s12">
+                        <input id="bairro" type="text" class="validate">
+                        <label for="bairro">Bairro</label>
+                </div>
+                <div class="input-field col s12">
+                        <input id="rua" type="text" class="validate">
+                        <label for="rua">Rua / Avenida</label>
+                </div>
+                <div class="input-field col s12">
+                        <input id="numero" type="text" class="validate">
+                        <label for="numero">Numero</label>
+                </div>
+            </form>
+
+
+            </div>
+        </div>
+    </main>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.mask.js"></script>
+    <script src="js/cep-service.js"></script>
+    <script src="js/populate-estado.js"></script>
+    <script src="js/form-validation.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#telefone").mask('(00) 0000-0000');
+            $("#celular").mask('(00) 00000-0000');
+            $("#whatsapp").mask('(00) 00000-0000');
+            $("#cep").mask('00000-000');
+            $('#modal').formSelect();
+            populateEstados();
+            
+        });
+    </script>
+</body>
+
+</html>
