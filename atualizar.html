@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/cadastrar.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/atualizar.css" media="screen,projection" />
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -15,7 +15,7 @@
     <header>
         <div class="row">
             <div class="col s6 m6">
-                <h2>Cadastrar</h2>
+                <h2>Alterar/Remover</h2>
             </div>
         </div>
         <div class="col s12">
@@ -91,12 +91,16 @@
                         <input name="numero" id="numero" type="text">
                         <label for="numero">Numero</label>
                     </div>
-                    <div class="col s12 valid">
-                        <button id="botao-submit" type="submit" name="action" class="green darken-2 btn">Cadastrar-se
-                            agora!</button>
+                    <div class="col s6 valid">
+                        <button id="botao-atualizar" type="submit" name="action"
+                            class="green darken-2 btn">Atualizar</button>
                     </div>
             </form>
-
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <button id="botao-remover" class="red accent-3 btn">Remover</button>
+            </div>
         </div>
         </div>
     </main>
@@ -106,7 +110,8 @@
     <script src="js/jquery.mask.js"></script>
     <script src="js/cep-service.js"></script>
     <script src="js/populate-estado.js"></script>
-    <script src="js/form-validation-inserir.js"></script>
+    <script src="js/form-validation-atualizar.js"></script>
+    <script src="js/atualizar.js"></script>
     <script>
         $(document).ready(function () {
             $("#telefone").mask('(00) 0000-0000');
@@ -115,6 +120,7 @@
             $("#cep").mask('00000-000');
             $('#modal').formSelect();
             populateEstados();
+            populateTransportadora();
 
         });
     </script>

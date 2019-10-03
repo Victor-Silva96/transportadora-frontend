@@ -1,0 +1,10 @@
+.input-field label{
+    top: -26px;
+}
+
+.btn{
+    width: 100%;
+}
+.input-field div.error {
+    color: #FF4081;
+}

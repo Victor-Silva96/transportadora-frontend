@@ -1,12 +1,13 @@
-function getAllTransportadoras(){
+function getAllTransportadoras() {
     return $.ajax({
-        type : 'GET',
-        url : 'http://localhost:8080/transportadoras',
-        dataType : "json"
+        type: 'GET',
+        url: 'http://localhost:8080/transportadoras',
+
+        dataType: "json"
     });
 }
 
-async function populateTransportadoras(){
+async function populateTransportadoras() {
     const transportadoras = await getAllTransportadoras();
     transportadoras.forEach(element => {
         let cardTransportadora = `
@@ -14,7 +15,7 @@ async function populateTransportadoras(){
             <a href="atualizar.html?id=${element.id}">
                 <div class="col s12 card cards-transportadora">
                        <div class="col s4">
-                           <p>${element.nome}</p>
+                           <p id="nome">${element.nome}</p>
                        </div>
                        <div class="col s4">
                           <p>${element.telefone}</p> 
@@ -33,7 +34,7 @@ async function populateTransportadoras(){
     });
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     populateTransportadoras();
 
 });
